@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Alo_Vo_Interation : MonoBehaviour
 {
-    private string URL = "http://ip.jsontest.com/?callback=showMyIP";
+    private string URL = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,16 +22,19 @@ public class Alo_Vo_Interation : MonoBehaviour
     IEnumerator GetAnswer()
     {
         Debug.Log("Oi in answer!");
-        using(UnityWebRequest request = UnityWebRequest.Get(URL))
+        if(URL != "")
         {
-            yield return request.SendWebRequest();
-            
-            if(request.result == UnityWebRequest.Result.ConnectionError)
-                Debug.LogError(request.error);
-            else
+            using(UnityWebRequest request = UnityWebRequest.Get(URL))
             {
-                string json = request.downloadHandler.text;
-                Debug.Log(json);
+                yield return request.SendWebRequest();
+                
+                if(request.result == UnityWebRequest.Result.ConnectionError)
+                    Debug.LogError(request.error);
+                else
+                {
+                    string json = request.downloadHandler.text;
+                    Debug.Log(json);
+                }
             }
         }
     }

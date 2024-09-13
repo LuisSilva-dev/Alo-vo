@@ -1,0 +1,2 @@
+C:\Users\Luis Silva\Desktop\Game\Explorer's End\Alo vo\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\Luis Silva\Desktop\Game\Explorer's End\Alo vo\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\cpp\FramePacing\CMakeLists.txt
